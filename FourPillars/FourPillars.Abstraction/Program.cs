@@ -10,6 +10,10 @@ namespace FourPillars.Abstraction
     {
         static void Main(string[] args)
         {
+            DatabaseConnection dbConnection = new OracleDatabaseConnection()
+            dbConnection.ConnectToDatabase("DatabaseAddress");
+
+            Console.ReadLine();
         }
     }
 }
