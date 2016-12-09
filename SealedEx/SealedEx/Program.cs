@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SealedEx
 {
-    sealed class SealedClass
+    sealed class SealedClassCustomers //A sealed class - for customers names
     {
-        public int a;
-        public int b;
+        public string a;
+        public string b;
     }
 }

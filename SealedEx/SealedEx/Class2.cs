@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SealedEx
 {
-    class RandomDerivedClass : SealedClass
+    class RandomDerivedClass : SealedClassCustomers
     {
-    
+
     }
 }
