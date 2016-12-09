@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Presentation_Test
 {
-        class MainClass
+        class MathClass
         {
-        static void Main()
+        static void Main() 
         {
-            double dub = 8.34;
+            double random = 8.94; //defining the variable
            
-            Console.WriteLine(Math.Abs(dub));
-            Console.WriteLine(Math.Floor(dub)); 
-            Console.WriteLine(Math.Round(Math.Abs(dub)));
+            Console.WriteLine(Math.Abs(random));  //using the static class to return the absolute value of the variable
+            Console.WriteLine(Math.Floor(random)); //using the static class to return the largest integer (LESS THAN) the variable
+            Console.WriteLine(Math.Round(Math.Abs(random))); //using the static class to return the variable rounded to the nearest integer
 
-           
             Console.ReadLine();
         }
         }
