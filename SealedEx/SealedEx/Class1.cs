@@ -10,10 +10,10 @@ namespace SealedEx
     {
         static void Main()
         {
-            SealedClass sc = new SealedClass();
-            sc.x = 110;
-            sc.y = 150;
-            Console.WriteLine("a = {0}, a = {1}", sc.x, sc.y);
+            SealedClassCustomers sc = new SealedClassCustomers(); 
+            sc.a = "Joe Bloggs"; 
+            sc.b = "Jane Doe"; 
+            Console.WriteLine("a = {0}, b = {1}", sc.a, sc.b); //Showing both customers names as called
             Console.ReadLine();
         }
     }
