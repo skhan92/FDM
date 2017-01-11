@@ -16,5 +16,9 @@ namespace ClassLibrary1
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }
+
+        DbSet<Users> users { get; set; }
+        DbSet<Admins> admins { get; set; }
+        DbSet<Charities> charities { get; set; }
     }
 }
