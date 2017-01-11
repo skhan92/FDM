@@ -51,11 +51,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Broker.cs" />
+    <Compile Include="BrokerRepository.cs" />
     <Compile Include="CodeFirstModel.cs" />
     <Compile Include="Company.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Migrations\201701111017361_initial.cs" />
     <Compile Include="Migrations\201701111017361_initial.Designer.cs">
       <DependentUpon>201701111017361_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701111026594_locations.cs" />
+    <Compile Include="Migrations\201701111026594_locations.Designer.cs">
+      <DependentUpon>201701111026594_locations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701111017361_initial.resx">
       <DependentUpon>201701111017361_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701111026594_locations.resx">
+      <DependentUpon>201701111026594_locations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

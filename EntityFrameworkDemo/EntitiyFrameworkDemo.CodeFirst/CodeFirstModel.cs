@@ -17,7 +17,8 @@ namespace EntitiyFrameworkDemo.CodeFirst
         {
         }
 
-        public DbSet<Broker> brokers { get; set; }
+        public virtual DbSet<Broker> brokers { get; set; }
         public DbSet<Company> companies { get; set; }
+        public DbSet<Location> location { get; set; }
     }
 }
