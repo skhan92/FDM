@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.Domain", "FDMGift.Domain\FDMGift.Domain.csproj", "{72CCBFA5-1ED6-4384-8101-40ED98937C64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.Logic", "FDMGift.Domain\FDMGift.Logic.csproj", "{72CCBFA5-1ED6-4384-8101-40ED98937C64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.DataAccess", "FDMGift.DataAccess\FDMGift.DataAccess.csproj", "{C976141A-C445-4363-8DC3-053ABBF8BA31}"
 EndProject
