@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
-namespace FDMGift.Domain
+namespace FDMGift.Logic
 {
     public class Class1
     {
