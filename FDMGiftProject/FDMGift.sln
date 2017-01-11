@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{652331
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.EntityFramework", "ClassLibrary1\FDMGift.EntityFramework.csproj", "{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -30,6 +32,10 @@ Global
 		{C976141A-C445-4363-8DC3-053ABBF8BA31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C976141A-C445-4363-8DC3-053ABBF8BA31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C976141A-C445-4363-8DC3-053ABBF8BA31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
