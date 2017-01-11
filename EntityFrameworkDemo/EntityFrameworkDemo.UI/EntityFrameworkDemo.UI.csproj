@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntitiyFrameworkDemo.CodeFirst\EntitiyFrameworkDemo.CodeFirst.csproj">
+      <Project>{e77cd827-d892-4a82-9942-88653ff654d4}</Project>
+      <Name>EntitiyFrameworkDemo.CodeFirst</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityFrameworkDemo.DatabaseFirst\EntityFrameworkDemo.DatabaseFirst.csproj">
       <Project>{de3e7c6e-468b-4f3a-8d62-e18ce57b8d6e}</Project>
       <Name>EntityFrameworkDemo.DatabaseFirst</Name>
