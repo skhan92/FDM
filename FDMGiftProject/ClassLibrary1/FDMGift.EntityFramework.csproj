@@ -50,9 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminRepository.cs" />
     <Compile Include="Admins.cs" />
     <Compile Include="Basket.cs" />
     <Compile Include="Charities.cs" />
+    <Compile Include="CharitiesRepository.cs" />
     <Compile Include="EntityFramework.cs" />
     <Compile Include="Migrations\201701121226425_initial.cs" />
     <Compile Include="Migrations\201701121226425_initial.Designer.cs">
