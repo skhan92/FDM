@@ -25,21 +25,33 @@ namespace MiniFakeUI
             //context.SaveChanges();
 
             //Remove a user from the database
-            foreach (Users users in context.users)
-            {
-                if (users.id == //WHATEVER ID TO REMOVE IN RELATION TO TABLE)
-                {
-                    context.users.Remove(users);
-                }
-            }
-            context.SaveChanges();
+            //foreach (Users users in context.users)
+            //{
+            //    if (users.id == //WHATEVER ID TO REMOVE IN RELATION TO TABLE)
+            //    {
+            //        context.users.Remove(users);
+            //    }
+            //}
+            //context.SaveChanges();
 
+            //Using Linq statement
+            var query = from b in context.users
+                        where b.id == 1
+                        select b;
 
-            foreach (Users users in context.users)
+            foreach (var users in query)
             {
                 Console.WriteLine(users.fullName);
             }
-                Console.ReadLine();
+
+            Console.ReadLine();
+
+            //BELOW IS FOR ADDING, UPDATING, REMOVING
+            //foreach (Users users in context.users)
+            //{
+            //    Console.WriteLine(users.fullName);
+            //}
+            //    Console.ReadLine();
         }
     }
 }
