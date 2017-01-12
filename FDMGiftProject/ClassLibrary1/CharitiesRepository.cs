@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    class CharitiesRepository
+    public class CharitiesRepository
     {
         public EntityFramework _context;
 

@@ -53,6 +53,7 @@
     <Compile Include="AdminRepository.cs" />
     <Compile Include="Admins.cs" />
     <Compile Include="Basket.cs" />
+    <Compile Include="BasketRepository.cs" />
     <Compile Include="Charities.cs" />
     <Compile Include="CharitiesRepository.cs" />
     <Compile Include="EntityFramework.cs" />
