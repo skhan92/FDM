@@ -8,7 +8,7 @@ namespace ClassLibrary1
 {
     public class UserRepository
     {
-        public EntityFramework _context; 
+        public EntityFramework _context;
 
         public UserRepository(EntityFramework context)
         {
@@ -20,33 +20,54 @@ namespace ClassLibrary1
             return _context.users.ToList();
         }
 
-        public void addUsers (Users UsersToAdd, string fullName, string eMail, string passWord)
+        public void addUsers(Users UsersToAdd)
         {
             //Adding a user to the database
             _context.users.Add(UsersToAdd);
             _context.SaveChanges();
         }
 
-        //public void updateUsers (Users UsersToUpdate, int IdToChange, string WhatToChange)
-        //{
-        //    //Update database
-        //   var query = from b in _context.users
-        //               where b.id == IdToChange
-        //               select b;
-
-        //   foreach (var users in query)
-        //   {
-        //       Console.WriteLine(users.fullName);
-        //   }
-
-        //    if( == )
-        //    {
-        //        u.fullName = nwName;
-        //    }
-            
-        //    _context.SaveChanges();   
-        //}
+        public void updateUsers(int IdToChange, string WhatToChange, string changeTo)
+        {
+            string fullName = "fullName";
+            string email = "email";
+            string password = "password";
 
 
+            //Update database
+            var query = from b in _context.users
+                        where b.id == IdToChange
+                        select b;
+
+            foreach (var users in query)
+            {
+                if (WhatToChange == fullName)
+                {
+                   users.fullName = changeTo;
+                }
+                if (WhatToChange == email)
+                {
+                   users.email = changeTo;
+                }
+                if (WhatToChange == password)
+                {
+                    users.password = changeTo;
+                }
+            }
+            _context.SaveChanges();
+        }
+
+        public void removeUsers(Users UsersToUpdate, int IdToRemove)
+        {
+            //Remove a user from the database
+            foreach (Users users in _context.users)
+            {
+                if (users.id == IdToRemove)
+                {
+                    _context.users.Remove(users);
+                }
+            }
+            _context.SaveChanges();
+        }
     }
 }
