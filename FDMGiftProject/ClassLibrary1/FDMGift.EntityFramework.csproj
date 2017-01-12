@@ -54,13 +54,9 @@
     <Compile Include="Basket.cs" />
     <Compile Include="Charities.cs" />
     <Compile Include="EntityFramework.cs" />
-    <Compile Include="Migrations\201701111635231_initial.cs" />
-    <Compile Include="Migrations\201701111635231_initial.Designer.cs">
-      <DependentUpon>201701111635231_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701121020485_initial1.cs" />
-    <Compile Include="Migrations\201701121020485_initial1.Designer.cs">
-      <DependentUpon>201701121020485_initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201701121127152_initial.cs" />
+    <Compile Include="Migrations\201701121127152_initial.Designer.cs">
+      <DependentUpon>201701121127152_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701111635231_initial.resx">
-      <DependentUpon>201701111635231_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701121020485_initial1.resx">
-      <DependentUpon>201701121020485_initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701121127152_initial.resx">
+      <DependentUpon>201701121127152_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
