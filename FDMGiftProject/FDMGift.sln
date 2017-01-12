@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{652331
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.EntityFramework", "ClassLibrary1\FDMGift.EntityFramework.csproj", "{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniFakeUI", "MiniFakeUI\MiniFakeUI.csproj", "{E4096648-E7E7-454B-B3E0-6B1227D516EF}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -36,6 +38,10 @@ Global
 		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7C86D64-DAC6-42D2-ADF2-555B3C1E3A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4096648-E7E7-454B-B3E0-6B1227D516EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4096648-E7E7-454B-B3E0-6B1227D516EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4096648-E7E7-454B-B3E0-6B1227D516EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4096648-E7E7-454B-B3E0-6B1227D516EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
