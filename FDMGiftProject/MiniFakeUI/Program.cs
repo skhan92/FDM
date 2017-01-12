@@ -101,6 +101,34 @@ namespace MiniFakeUI
             //    Console.WriteLine(charities.charityName);
             //}
             //    Console.ReadLine();
+
+
+
+
+            //ADMINS
+            //Update Admins database
+            //Admins adminsToUpdate = context.admins.Find(2);
+            //adminsToUpdate.fullName = "Helping Hands";
+            //context.SaveChanges();
+
+
+            //Using Linq statement
+            //var query = from b in context.charities
+            //            where b.id == 1
+            //            select b;
+
+            //foreach (var charities in query)
+            //{
+            //    Console.WriteLine(charities.charityName);
+            //}
+            //Console.ReadLine();
+
+            //BELOW IS FOR UPDATING
+            //foreach (Charities charities in context.charities)
+            //{
+            //    Console.WriteLine(charities.charityName);
+            //}
+            //    Console.ReadLine();
         }
     }
 }
