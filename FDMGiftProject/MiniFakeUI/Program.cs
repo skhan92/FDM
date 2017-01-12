@@ -11,14 +11,35 @@ namespace MiniFakeUI
     {
         static void Main(string[] args)
         {
-            //This is for code first
+            //Returns all the users full names
             EntityFramework context = new EntityFramework();
+
+            //Adding a user to the database
+            //Users newUsers = new Users() { id = 9, fullName = "Daniel Kloss", email = "dankloss@fdmgroup.com", password = "danftw" };
+            //context.users.Add(newUsers);
+            //context.SaveChanges();
+ 
+            //Update database
+            //Users userToUpdate = context.users.Find(//WHATEVER ID TO REMOVE IN RELATION TO TABLE);
+            //userToUpdate.fullName = "Mugiwara no Luffy";
+            //context.SaveChanges();
+
+            //Remove a user from the database
+            foreach (Users users in context.users)
+            {
+                if (users.id == //WHATEVER ID TO REMOVE IN RELATION TO TABLE)
+                {
+                    context.users.Remove(users);
+                }
+            }
+            context.SaveChanges();
+
 
             foreach (Users users in context.users)
             {
                 Console.WriteLine(users.fullName);
             }
-            Console.ReadLine();
+                Console.ReadLine();
         }
     }
 }
