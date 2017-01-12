@@ -20,7 +20,7 @@ namespace ClassLibrary1
             return _context.admins.ToList();
         }
 
-        public void updateAdmins(int IdToChange, string WhatToChange, string changeTo)
+        public void updateAdmins(int IdToChange, string WhatToChange, string changeTo) //Updating the details of an existing Admin
         {
             string fullName = "fullName";
             string email = "email";
