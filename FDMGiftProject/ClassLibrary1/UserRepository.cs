@@ -20,14 +20,14 @@ namespace ClassLibrary1
             return _context.users.ToList();
         }
 
-        public void addUsers(Users UsersToAdd)
+        public void addUsers(Users UsersToAdd) //Adding a user to the database
         {
             //Adding a user to the database
             _context.users.Add(UsersToAdd);
             _context.SaveChanges();
         }
 
-        public void updateUsers(int IdToChange, string WhatToChange, string changeTo)
+        public void updateUsers(int IdToChange, string WhatToChange, string changeTo) //Updating the details of an existing user
         {
             string fullName = "fullName";
             string email = "email";
@@ -55,9 +55,9 @@ namespace ClassLibrary1
                 }
             }
             _context.SaveChanges();
-        }
+        } 
 
-        public void removeUsers(Users UsersToUpdate, int IdToRemove)
+        public void removeUsers(Users UsersToUpdate, int IdToRemove) //Removing an exisiting user by ID
         {
             //Remove a user from the database
             foreach (Users users in _context.users)
