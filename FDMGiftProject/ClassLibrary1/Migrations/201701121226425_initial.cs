@@ -12,8 +12,7 @@ namespace ClassLibrary1.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        firstName = c.String(),
-                        secondName = c.String(),
+                        fullName = c.String(),
                         email = c.String(),
                         password = c.String(),
                     })

@@ -21,5 +21,6 @@ namespace ClassLibrary1
         public DbSet<Admins> admins { get; set; }
         public DbSet<Charities> charities { get; set; }
         public DbSet<Basket> basket { get; set; }
+
     }
 }
