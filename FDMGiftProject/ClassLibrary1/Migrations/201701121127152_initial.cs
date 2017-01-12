@@ -20,6 +20,17 @@ namespace ClassLibrary1.Migrations
                 .PrimaryKey(t => t.id);
             
             CreateTable(
+                "dbo.Baskets",
+                c => new
+                    {
+                        basketId = c.Int(nullable: false, identity: true),
+                        userId = c.Int(nullable: false),
+                        charityId = c.Int(nullable: false),
+                        amountDonated = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.basketId);
+            
+            CreateTable(
                 "dbo.Charities",
                 c => new
                     {
@@ -34,8 +45,7 @@ namespace ClassLibrary1.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        firstName = c.String(),
-                        secondName = c.String(),
+                        fullName = c.String(),
                         email = c.String(),
                         password = c.String(),
                     })
@@ -47,6 +57,7 @@ namespace ClassLibrary1.Migrations
         {
             DropTable("dbo.Users");
             DropTable("dbo.Charities");
+            DropTable("dbo.Baskets");
             DropTable("dbo.Admins");
         }
     }

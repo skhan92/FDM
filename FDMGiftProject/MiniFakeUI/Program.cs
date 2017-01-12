@@ -16,7 +16,7 @@ namespace MiniFakeUI
 
             foreach (Users users in context.users)
             {
-                Console.WriteLine(users.firstName);
+                Console.WriteLine(users.fullName);
             }
             Console.ReadLine();
         }
