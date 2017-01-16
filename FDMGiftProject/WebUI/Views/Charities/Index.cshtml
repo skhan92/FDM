@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebUI.Models.Charity>
+
+@{
+    ViewBag.Title = "Charities";
+}
+
+<h2>Charities</h2>
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(charity => charity.id)</th>
+        <th>@Html.DisplayNameFor(charity => charity.charityName)</th>
+        <th>@Html.DisplayNameFor(charity => charity.targetAmount)</th>
+    </tr>
+
+    @foreach (var charity in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => charity.id)</td>
+            <td>@Html.DisplayFor(modelItem => charity.charityName)</td>
+            <td>@Html.DisplayFor(modelItem => charity.targetAmount)</td>
+        </tr>
+    }
+
+</table>
+

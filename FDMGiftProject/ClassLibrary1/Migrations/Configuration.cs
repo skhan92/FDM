@@ -1,18 +1,18 @@
-namespace ClassLibrary1.Migrations
+namespace FDMGift.EntityFramework.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ClassLibrary1.EntityFramework>
+    internal sealed class Configuration : DbMigrationsConfiguration<FDMGift.EntityFramework.EntityFramework>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ClassLibrary1.EntityFramework context)
+        protected override void Seed(FDMGift.EntityFramework.EntityFramework context)
         {
             //  This method will be called after migrating to the latest version.
 

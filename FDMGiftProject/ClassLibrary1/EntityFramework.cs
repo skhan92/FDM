@@ -1,4 +1,4 @@
-namespace ClassLibrary1
+namespace FDMGift.EntityFramework
 {
     using System;
     using System.Data.Entity;
