@@ -12,7 +12,7 @@ namespace MiniFakeUI
         static void Main(string[] args)
         {//THIS IS CODE FOR ADDING, UPDATING AND REMOVING USERS FROM THE DATABASE
             //Returns all the users full names
-            EntityFramework context = new EntityFramework();
+            //EntityFramework context = new EntityFramework();
 
 
 
