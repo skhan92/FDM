@@ -6,19 +6,43 @@
 
 <h2>Charities</h2>
 
-<table class="table table-hover">
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#charities">Charities</a></li>
+    <li><a data-toggle="tab" href="#cancerresearchuk">Cancer Research UK</a></li>
+    <li><a data-toggle="tab" href="#nspcc">NSPCC</a></li>
+    <li><a data-toggle="tab" href="#ageuk">Age UK</a></li>
+</ul>
 
-    <tr>
-        <th>@Html.DisplayNameFor(charity => charity.charityName)</th>
-        <th>@Html.DisplayNameFor(charity => charity.targetAmount)</th>
-    </tr>
+<div class="tab-content">
+    <div id="charities" class="tab-pane fade in active">
+        <h3>Charities</h3>
+        <table class="table table-hover">
 
-    @foreach (var charity in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => charity.charityName)</td>
-            <td>@Html.DisplayFor(modelItem => charity.targetAmount)</td>
-        </tr>
-    }
+            <tr>
+                <th>@Html.DisplayNameFor(charity => charity.charityName)</th>
+                <th>@Html.DisplayNameFor(charity => charity.targetAmount)</th>
+            </tr>
 
-</table>
+            @foreach (var charity in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => charity.charityName)</td>
+                    <td>@Html.DisplayFor(modelItem => charity.targetAmount)</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div id="cancerresearchuk" class="tab-pane fade">
+        <h3>Cancer Research UK</h3>
+        <p>A charity at the forefront of funding research to battle cancer.</p>
+    </div>
+    <div id="nspcc" class="tab-pane fade">
+        <h3>NSPCC</h3>
+        <p>A charity at the forefront of assising children from abuse.</p>
+    </div>
+    <div id="ageuk" class="tab-pane fade">
+        <h3>Age UK</h3>
+        <p>A charity at the forefront of assisting the elderly.</p>
+    </div>
+</div>
