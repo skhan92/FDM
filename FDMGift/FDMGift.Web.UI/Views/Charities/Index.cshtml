@@ -35,7 +35,43 @@
     </div>
     <div id="cancerresearchuk" class="tab-pane fade">
         <h3>Cancer Research UK</h3>
-        <p>A charity at the forefront of funding research to battle cancer.</p>
+
+        <div id="crucarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#crucarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#crucarousel" data-slide-to="1"></li>
+                <li data-target="#crucarousel" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="~/Views/Charities/cru.jpg" alt="Research">
+                    <div class="carousel-caption">
+                        <h3>Research</h3>
+                        <p>Most vital component of the charity is the groundbreaking work going into the research</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/Views/Charities/cru1.jpg" alt="Fundraising">
+                    <div class="carousel-caption">
+                        <h3>Fundraising</h3>
+                        <p>Donations also assist in the phenomenal events organised for fundraising</p>
+                    </div>
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#crucarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+                </span>
+                <span class="sr-only">Next</span>
+            </a>
+            <a class="right carousel-control" href="#crucarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+                </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
     <div id="nspcc" class="tab-pane fade">
         <h3>NSPCC</h3>
