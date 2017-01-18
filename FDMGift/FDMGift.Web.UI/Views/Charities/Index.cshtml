@@ -1,0 +1,24 @@
+﻿@model IEnumerable<FDMGift.EntityFramework.Charities>
+
+@{
+    ViewBag.Title = "Charities";
+}
+
+<h2>Charities</h2>
+
+<table class="table table-hover">
+
+    <tr>
+        <th>@Html.DisplayNameFor(charity => charity.charityName)</th>
+        <th>@Html.DisplayNameFor(charity => charity.targetAmount)</th>
+    </tr>
+
+    @foreach (var charity in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => charity.charityName)</td>
+            <td>@Html.DisplayFor(modelItem => charity.targetAmount)</td>
+        </tr>
+    }
+
+</table>
