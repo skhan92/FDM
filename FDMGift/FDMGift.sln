@@ -9,7 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.Web.UI", "FDMGift.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.Web.UI.Tests", "FDMGift.Web.UI.Tests\FDMGift.Web.UI.Tests.csproj", "{4FBF9743-239D-42C6-BBC5-365A22463936}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.Logic", "FDMGift.Logic\FDMGift.Logic.csproj", "{DA4564BA-8E6D-4006-9865-61DEC655B6CB}"
+EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -27,6 +33,10 @@ Global
 		{4FBF9743-239D-42C6-BBC5-365A22463936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FBF9743-239D-42C6-BBC5-365A22463936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FBF9743-239D-42C6-BBC5-365A22463936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA4564BA-8E6D-4006-9865-61DEC655B6CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA4564BA-8E6D-4006-9865-61DEC655B6CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA4564BA-8E6D-4006-9865-61DEC655B6CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA4564BA-8E6D-4006-9865-61DEC655B6CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
