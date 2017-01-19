@@ -8,9 +8,9 @@ namespace FDMGift.EntityFramework
 {
     public class BasketRepository
     {
-        public EntityFramework _context;
+        public EFramework _context;
 
-        public BasketRepository(EntityFramework context)
+        public BasketRepository(EFramework context)
         {
             _context = context;
         }

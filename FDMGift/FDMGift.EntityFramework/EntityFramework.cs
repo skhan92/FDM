@@ -5,9 +5,9 @@ namespace FDMGift.EntityFramework
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class EntityFramework : DbContext
+    public partial class EFramework : DbContext
     {
-        public EntityFramework()
+        public EFramework()
             : base("name=EntityFramework")
         {
         }
