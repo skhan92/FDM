@@ -36,6 +36,22 @@ namespace FDMGift.EntityFramework
             return false;
         }
 
+        public bool checkUserExists(string EmailOfUserToCheck)
+        {
+            var query = from b in _context.users
+                        where b.email == EmailOfUserToCheck
+                        select b;
+
+            foreach (var user in query)
+            {
+                if (EmailOfUserToCheck == user.email)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public void addUsers(Users UsersToAdd) //Adding a user to the database
         {
             //Adding a user to the database
