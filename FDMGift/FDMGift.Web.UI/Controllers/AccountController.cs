@@ -10,7 +10,7 @@ namespace WebUI.Controllers
     //NEED TO MAKE ADMIN AND USER LOGIN WORK TOGETHER!
     public class AccountController : Controller
     {
-        EntityFramework db = new EntityFramework();
+        EFramework db = new EFramework();
 
         [HttpGet]
         public ActionResult Register()

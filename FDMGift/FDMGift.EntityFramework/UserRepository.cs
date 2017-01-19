@@ -8,9 +8,9 @@ namespace FDMGift.EntityFramework
 {
     public class UserRepository
     {
-        public EntityFramework _context;
+        public EFramework _context;
 
-        public UserRepository(EntityFramework context)
+        public UserRepository(EFramework context)
         {
             _context = context;
         }

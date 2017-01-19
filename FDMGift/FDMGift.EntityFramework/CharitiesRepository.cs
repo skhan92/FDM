@@ -8,9 +8,9 @@ namespace FDMGift.EntityFramework
 {
     public class CharitiesRepository
     {
-        public EntityFramework _context;
+        public EFramework _context;
 
-        public CharitiesRepository(EntityFramework context)
+        public CharitiesRepository(EFramework context)
         {
             _context = context;
         }

@@ -9,7 +9,7 @@ namespace WebUI.Controllers
 {
     public class CharitiesController : Controller
     {
-        EntityFramework db = new EntityFramework();
+        EFramework db = new EFramework();
         // GET: Charities
         public ActionResult Index()
         {
