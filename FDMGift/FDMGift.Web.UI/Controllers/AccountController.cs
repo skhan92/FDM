@@ -39,48 +39,48 @@ namespace WebUI.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Login(Users checkUser)
-        //{
-        //    UserRepository ur = new UserRepository(db);
-
-        //    if (ur.checkUserDetails(checkUser.email, checkUser.password) == true)
-        //    {
-        //        if (Request.IsAjaxRequest())
-        //        {
-        //            return JavaScript("window.location = '" + Url.Action("UserDashboard", "Account") + "'");
-        //            return JavaScript("location.reload(true)");
-        //            UserDashboard();
-        //        }
-        //    }
-        //    return PartialView("_unsuccessful");
-        //}
-
-        //public ActionResult UserDashboard()
-        //{
-        //    return View();
-        //}
-
         [HttpPost]
-        public ActionResult Login(Admins checkAdmin)
+        public ActionResult Login(Users checkUser)
         {
-            AdminRepository ur = new AdminRepository(db);
+            UserRepository ur = new UserRepository(db);
 
-            if (ur.checkAdminDetails(checkAdmin.email, checkAdmin.password) == true)
+            if (ur.checkUserDetails(checkUser.email, checkUser.password) == true)
             {
                 if (Request.IsAjaxRequest())
                 {
-                    return JavaScript("window.location = '" + Url.Action("AdminDashboard", "Account") + "'");
+                    return JavaScript("window.location = '" + Url.Action("UserDashboard", "Account") + "'");
                     return JavaScript("location.reload(true)");
-                    AdminDashboard();
+                    UserDashboard();
                 }
             }
             return PartialView("_unsuccessful");
         }
 
-        public ActionResult AdminDashboard()
+        public ActionResult UserDashboard()
         {
             return View();
         }
+
+        //[HttpPost]
+        //public ActionResult Login(Admins checkAdmin)
+        //{
+        //    AdminRepository ur = new AdminRepository(db);
+
+        //    if (ur.checkAdminDetails(checkAdmin.email, checkAdmin.password) == true)
+        //    {
+        //        if (Request.IsAjaxRequest())
+        //        {
+        //            return JavaScript("window.location = '" + Url.Action("AdminDashboard", "Account") + "'");
+        //            return JavaScript("location.reload(true)");
+        //            AdminDashboard();
+        //        }
+        //    }
+        //    return PartialView("_unsuccessful");
+        //}
+
+        //public ActionResult AdminDashboard()
+        //{
+        //    return View();
+        //}
     }
 }
