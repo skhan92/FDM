@@ -21,6 +21,7 @@
             <tr>
                 <th>@Html.DisplayNameFor(charity => charity.charityName)</th>
                 <th>@Html.DisplayNameFor(charity => charity.targetAmount)</th>
+                <th>Donate</th>
             </tr>
 
             @foreach (var charity in Model)
@@ -28,6 +29,7 @@
                 <tr>
                     <td>@Html.DisplayFor(modelItem => charity.charityName)</td>
                     <td>@Html.DisplayFor(modelItem => charity.targetAmount)</td>
+                    <td><button type="button">Donate now!</button></td>
                 </tr>
             }
 
