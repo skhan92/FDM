@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace WebUI.Controllers
 {
@@ -40,25 +41,52 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(Users checkUser)
+        public ActionResult Login(Users checkUser, string returnUrl)
         {
             UserRepository ur = new UserRepository(db);
-
-            if (ur.checkUserDetails(checkUser.email, checkUser.password) == true)
+            if (ModelState.IsValid)
             {
-                if (Request.IsAjaxRequest())
+                UserLogic ul = new UserLogic(db);
+                string email = checkUser.email;
+                string password = checkUser.password;
+
+                if (ur.checkUserDetails(checkUser.email, checkUser.password) == true)
                 {
-                    return JavaScript("window.location = '" + Url.Action("UserDashboard", "Account") + "'");
-                    return JavaScript("location.reload(true)");
-                    UserDashboard();
+                    FormsAuthentication.SetAuthCookie(email, false);
+                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+                else
+                {
+                    if (Request.IsAjaxRequest())
+                    {
+                        return JavaScript("window.location = '" + Url.Action("UserDashboard", "Account") + "'");
+                        return JavaScript("location.reload(true)");
+                        UserDashboard();
+                    }
+                    return PartialView("_unsuccessful");
                 }
             }
-            return PartialView("_unsuccessful");
+            return View(checkUser);
         }
 
         public ActionResult UserDashboard()
         {
             return View();
+        }
+
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Index", "Home");
         }
 
         //[HttpPost]
