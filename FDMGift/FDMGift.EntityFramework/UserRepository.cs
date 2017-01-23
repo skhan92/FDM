@@ -59,7 +59,7 @@ namespace FDMGift.EntityFramework
             _context.SaveChanges();
         }
 
-        public void updateUsers(int IdToChange, string WhatToChange, string changeTo) //Updating the details of an existing user
+        public void updateUser(string EmailToChange, string WhatToChange, string changeTo) //Updating the details of an existing user
         {
             string fullName = "fullName";
             string email = "email";
@@ -68,7 +68,7 @@ namespace FDMGift.EntityFramework
 
             //Update database
             var query = from b in _context.users
-                        where b.id == IdToChange
+                        where b.email == EmailToChange
                         select b;
 
             foreach (var users in query)
@@ -76,10 +76,6 @@ namespace FDMGift.EntityFramework
                 if (WhatToChange == fullName)
                 {
                     users.fullName = changeTo;
-                }
-                if (WhatToChange == email)
-                {
-                    users.email = changeTo;
                 }
                 if (WhatToChange == password)
                 {
