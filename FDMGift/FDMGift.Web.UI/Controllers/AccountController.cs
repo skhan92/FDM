@@ -60,16 +60,16 @@ namespace WebUI.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return JavaScript("window.location = '" + Url.Action("UserDashboard", "Account") + "'");
+                        return JavaScript("location.reload(true)");
+                        UserDashboard();
                     }
                 }
                 else
                 {
                     if (Request.IsAjaxRequest())
                     {
-                        return JavaScript("window.location = '" + Url.Action("UserDashboard", "Account") + "'");
-                        return JavaScript("location.reload(true)");
-                        UserDashboard();
+                        return PartialView("_unsuccessful");
                     }
                     return PartialView("_unsuccessful");
                 }
@@ -86,7 +86,7 @@ namespace WebUI.Controllers
         {
             FormsAuthentication.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //[HttpPost]
