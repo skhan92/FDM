@@ -5,3 +5,61 @@
 
 <h2>Basket</h2>
 
+@model FDMGift.EntityFramework.Basket
+
+@{
+    ViewBag.Title = "Basket";
+}
+
+<h2>Basket</h2>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#shoppingcart">Shopping Cart</a></li>
+    <li><a data-toggle="tab" href="#userbasket">Basket</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="changedetails" class="tab-pane fade in active">
+        <h3>Change Login Details</h3>
+        @using (Ajax.BeginForm("UpdateDetails", "UserDash", new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            UpdateTargetId = "createForm",
+            InsertionMode = InsertionMode.ReplaceWith
+        }, new { @id = "createForm" }))
+        {
+
+            <div class="form-horizontal">
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.fullName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Submit" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>}
+    </div>
+    <div id="userbasket" class="tab-pane fade">
+        <h3>User Basket</h3>
+    </div>
+</div>
