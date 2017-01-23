@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace FDMGift.Logic
 {
-    public interface IBasketLogic
-    {
-        void addBasket(Basket BasketToAdd);
-    }
+    //public interface IBasketLogic
+    //{
+    //    void addBasket(Basket BasketToAdd);
+    //}
 
-    public class BasketLogic : IBasketLogic
-    {
-        EFramework _EF;
-        public BasketLogic(EFramework EF)
-        {
-            _EF = EF;
-        }
-    }
+    //public class BasketLogic : IBasketLogic
+    //{
+    //    EFramework _EF;
+    //    public BasketLogic(EFramework EF)
+    //    {
+    //        _EF = EF;
+    //    }
+    //}
 
 }
