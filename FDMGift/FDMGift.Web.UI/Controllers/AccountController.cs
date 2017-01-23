@@ -89,26 +89,27 @@ namespace WebUI.Controllers
             return RedirectToAction("Login", "Account");
         }
 
-        //[HttpPost]
-        //public ActionResult Login(Admins checkAdmin)
-        //{
-        //    AdminRepository ur = new AdminRepository(db);
+        [HttpGet]
+        public ActionResult UpdateDetails()
+        {
+            return View();
+        }
 
-        //    if (ur.checkAdminDetails(checkAdmin.email, checkAdmin.password) == true)
-        //    {
-        //        if (Request.IsAjaxRequest())
-        //        {
-        //            return JavaScript("window.location = '" + Url.Action("AdminDashboard", "Account") + "'");
-        //            return JavaScript("location.reload(true)");
-        //            AdminDashboard();
-        //        }
-        //    }
-        //    return PartialView("_unsuccessful");
-        //}
+        [HttpPost]
+        public ActionResult UpdateDetails(string email, string fullName, string password)
+        {
+            string WhatToChange = "fullName";
+            string WhatToChange1 = "password";
 
-        //public ActionResult AdminDashboard()
-        //{
-        //    return View();
-        //}
+            UserRepository ur = new UserRepository(db);
+
+            if (Request.IsAjaxRequest())
+            {
+                ur.updateUser(email, WhatToChange, fullName);
+                ur.updateUser(email, WhatToChange1, password);
+                return PartialView("_success");
+            }
+            return PartialView("_unsuccessful");
+        }
     }
 }
