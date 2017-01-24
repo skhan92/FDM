@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ASPAdvancedDemo.Models.Book>
+
+@{
+    ViewBag.Title = "Books";
+}
+
+<h2>Books</h2>
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(book => book.title)</th>
+        <th>@Html.DisplayNameFor(book => book.author)</th>
+        <th>@Html.DisplayNameFor(book => book.price)</th>
+    </tr>
+
+
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => book.title)</td>
+            <td>@Html.DisplayFor(modelItem => book.author)</td>
+            <td>@Html.DisplayFor(modelItem => book.price)</td>
+        </tr>
+
+    }
+</table>
