@@ -12,11 +12,26 @@
         <vm:AdvancedViewModel/>
     </Page.DataContext>
 
-    <StackPanel>
-        <TextBlock Text="Please Enter a valid charity ID:"/>
-        <TextBox/>
-        <TextBlock Text="Please Enter the new Target Amount for specified charity:"/>
-        <TextBox/>
-        <Button Content="Submit" Command="{Binding navigateCommand}"/>
-    </StackPanel>
+    <Grid>
+        <TabControl>
+            <TabItem Header="Update Charity">
+                <StackPanel>
+                    <TextBlock Text="Please Enter a valid charity ID:"/>
+                    <TextBox/>
+                    <TextBlock Text="Please Enter the new Target Amount for specified charity:"/>
+                    <TextBox/>
+                    <Button Content="Submit" Command="{Binding navigateCommand}"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Add Charity">
+                <StackPanel>
+                    <TextBlock Text="Name of Charity:"/>
+                    <TextBox/>
+                    <TextBlock Text="Target amount"/>
+                    <TextBox/>
+                    <Button Content="Submit" Command="{Binding navigateCommand}"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </Page>
