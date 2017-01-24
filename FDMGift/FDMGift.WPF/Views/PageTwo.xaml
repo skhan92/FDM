@@ -9,6 +9,6 @@
 	Title="PageTwo">
 
     <Grid>
-        <TextBlock Text="Amount successfully changed!"/>
+        <TextBlock Text="Successful!!"/>
     </Grid>
 </Page>
