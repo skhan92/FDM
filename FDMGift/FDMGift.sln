@@ -16,8 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4771D0
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDMGift.Tests", "FDMGift.Tests\FDMGift.Tests.csproj", "{2731FD12-EA6A-4F15-9337-809D21CE93A9}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -44,10 +42,6 @@ Global
 		{F6A5F316-4CC3-4022-82B1-4A3697B8E810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6A5F316-4CC3-4022-82B1-4A3697B8E810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6A5F316-4CC3-4022-82B1-4A3697B8E810}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2731FD12-EA6A-4F15-9337-809D21CE93A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2731FD12-EA6A-4F15-9337-809D21CE93A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2731FD12-EA6A-4F15-9337-809D21CE93A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2731FD12-EA6A-4F15-9337-809D21CE93A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
