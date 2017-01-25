@@ -240,26 +240,40 @@ namespace FDMGift.Test
             contextMock.Verify(p => p.SaveChanges(), Times.Once);
         }
 
+        [TestMethod]
+        public void Test_RemoveUser_RemoveUserFromDatabase()
+        {
+            Mock<Users> userRemoved = new Mock<Users>();
+           
+            //Arrange
+            List<Users> userList = new List<Users>();
+            userList = new List<Users> { userRemoved.Object };
 
-        //[TestMethod]
-        //public void Test_RemoveUser_CallsRemoveOnDbSetAndSaveChangesOnContext()
-        //{
-        //    Mock<Users> user = new Mock<Users>();
-        //    //Arrange
+            userRemoved.Setup(p => p.id).Returns(1);
 
-        //    var mockDbSet = new Mock<DbSet<Users>>();
-        //    var mockContext = new Mock<EFramework>();
+            var testData = new List<Users>()
+            {
+                userRemoved.Object
+            }.AsQueryable();
 
-        //    mockContext.Setup(p => p.users).Returns(mockDbSet.Object);
+            var dbSetMock = new Mock<DbSet<Users>>();
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
 
-        //    var classUnderTest = new UserRepository(mockContext.Object);
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.users).Returns(dbSetMock.Object);
 
-        //    //Act
-        //    classUnderTest.addUsers(user.Object);
+            UserRepository classUnderTest = new UserRepository(contextMock.Object);
+            dbSetMock.Setup(s => s.Remove(userRemoved.Object)).Verifiable();
 
-        //    //Assert
-        //    mockDbSet.Verify(p => p.Add(user.Object), Times.Once);
-        //    mockContext.Verify(p => p.SaveChanges(), Times.Once);
-        //}
+            //Act
+            classUnderTest.removeUsers(userRemoved.Object.id);
+
+            //Assert
+            dbSetMock.Verify(p => p.Remove(userRemoved.Object), Times.Once);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
     }
 }

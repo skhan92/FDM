@@ -9,7 +9,7 @@ namespace FDMGift.EntityFramework
 {
     public class Users
     {
-        public int id { get; set; }
+        public virtual int id { get; set; }
         [DisplayName("Full Name")]
         public string fullName { get; set; }
         [DisplayName("E-Mail")]
