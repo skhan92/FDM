@@ -20,19 +20,16 @@ namespace FDMGift.WPF.ViewModels
             }
         }
 
-        //private ICommand _changeMessageCommand;
-        //public ICommand changeMessageCommand
-        //{
-        //    get
-        //    {
-        //        if (_changeMessageCommand == null )
-        //        {
-        //            _changeMessageCommand = new Command(ChangeText, CanChangeText);
-        //        }
-        //        return _changeMessageCommand;
-        //    }
-        //    set { _changeMessageCommand = value; }
-        //}
+        private int _newTargetAmount;
+        public int newTargetAmount
+        {
+            get { return _newTargetAmount; }
+            set
+            {
+                _newTargetAmount = value;
+                OnPropertyChanged("newTargetAmount");
+            }
+        }
 
         private ICommand _navigateCommand;
         public ICommand navigateCommand
@@ -56,21 +53,5 @@ namespace FDMGift.WPF.ViewModels
             //change the location to pagetwo.xaml
             navVM.location = "Views/PageTwo.xaml";
         }
-
-
-
-        //private bool CanChangeText()
-        //{
-        //    return true;
-        //}
-
-        //private void ChangeText()
-        //{
-        //    message = "Invalid Charity ID";
-        //}
-        //public AdvancedViewModel()
-        //{
-        //    message = "Enter Charity ID";
-        //}
     }
 }
