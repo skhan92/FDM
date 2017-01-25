@@ -7,18 +7,18 @@ using System.Windows.Input;
 
 namespace FDMGift.WPF.ViewModels
 {
-    public class AdvancedViewModel : BaseViewModel
+    public class CharityViewModel : BaseViewModel
     {
-        //private string _message;
-        //public string message
-        //{
-        //    get { return _message; }
-        //    set
-        //    {
-        //        _message = value;
-        //        OnPropertyChanged("message");
-        //    }
-        //}
+        private string _IdToChange;
+        public string IdToChange
+        {
+            get { return _IdToChange; }
+            set
+            {
+                _IdToChange = value;
+                OnPropertyChanged("IdToChange");
+            }
+        }
 
         //private ICommand _changeMessageCommand;
         //public ICommand changeMessageCommand
@@ -56,6 +56,8 @@ namespace FDMGift.WPF.ViewModels
             //change the location to pagetwo.xaml
             navVM.location = "Views/PageTwo.xaml";
         }
+
+
 
         //private bool CanChangeText()
         //{

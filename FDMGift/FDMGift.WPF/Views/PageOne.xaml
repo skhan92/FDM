@@ -9,7 +9,7 @@
 	Title="PageOne">
     
     <Page.DataContext>
-        <vm:AdvancedViewModel/>
+        <vm:CharityViewModel/>
     </Page.DataContext>
 
     <Grid>
@@ -17,7 +17,7 @@
             <TabItem Header="Update Charity">
                 <StackPanel>
                     <TextBlock Text="Please Enter a valid charity ID:"/>
-                    <TextBox Text="{Binding charityId, Mode=TwoWay}"/>
+                    <TextBox Text="{Binding IdToChange, Mode=TwoWay}"/>
                     <TextBlock Text="Please Enter the new Target Amount for specified charity:"/>
                     <TextBox Text="{Binding newTargetAmount, Mode=TwoWay}"/>
                     <Button Content="Submit" Command="{Binding navigateCommand}"/>

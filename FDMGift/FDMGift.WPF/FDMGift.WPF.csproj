@@ -69,7 +69,7 @@
     <Compile Include="ViewModels\AddCharity.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
-    <Compile Include="ViewModels\AdvancedViewModel.cs" />
+    <Compile Include="ViewModels\CharityViewModel.cs" />
     <Compile Include="Views\PageOne.xaml.cs">
       <DependentUpon>PageOne.xaml</DependentUpon>
     </Compile>

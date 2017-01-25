@@ -45,7 +45,7 @@ namespace FDMGift.EntityFramework
 
         public void updateCharities(int IdToChange, string WhatToChange, int changeTo) //Updating the targetAmount for a charity
         {
-            string targetAmount = "targetAmount";
+            string newTargetAmount = "newTargetAmount";
 
 
             //Update database
@@ -55,7 +55,7 @@ namespace FDMGift.EntityFramework
 
             foreach (var charities in query)
             {
-                if (WhatToChange == targetAmount)
+                if (WhatToChange == newTargetAmount)
                 {
                     charities.targetAmount = changeTo;
                 }
