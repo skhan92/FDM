@@ -1,4 +1,5 @@
 ﻿using FDMGift.EntityFramework;
+using FDMGift.Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,25 @@ namespace FDMGift.WPF.ViewModels
 {
     public class CharityViewModel : BaseViewModel
     {
+        CharityLogic _charLog;
+        EFramework _EF;
+
+        public CharityViewModel() 
+        {
+            _EF = new EFramework();
+            _charLog = new CharityLogic(_EF);
+        
+        }
+
+        private Charities _chari;
+
+        public Charities chari
+        {
+            get { return _chari; }
+            set { _chari = value; OnPropertyChanged("chari"); }
+        }
+        
+
         private string _IdToChange;
         public string IdToChange
         {
@@ -70,6 +90,7 @@ namespace FDMGift.WPF.ViewModels
 
         private void Navigate()
         {
+            //_charLog.RegisterCharity(chari);
 
             //access the nav view model
             NavigationViewModel navVM =
