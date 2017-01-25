@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FDMGift.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,6 +70,7 @@ namespace FDMGift.WPF.ViewModels
 
         private void Navigate()
         {
+
             //access the nav view model
             NavigationViewModel navVM =
                 App.Current.MainWindow.DataContext as NavigationViewModel;
