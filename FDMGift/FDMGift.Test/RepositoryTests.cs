@@ -9,8 +9,9 @@ using System.Data.Entity;
 namespace FDMGift.Test
 {
     [TestClass]
-    public class UnitRepositoryTests
+    public class RepositoryTests
     {
+        //USER REPOSITORY
         [TestMethod]
         public void Test_GetAllUsers_ReturnsAllUsers()
         {
