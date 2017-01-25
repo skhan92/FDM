@@ -31,6 +31,28 @@ namespace FDMGift.WPF.ViewModels
             }
         }
 
+        private string _charityName;
+        public string charityName
+        {
+            get { return _charityName; }
+            set
+            {
+                _charityName = value;
+                OnPropertyChanged("charityName");
+            }
+        }
+
+        private int _targetAmount;
+        public int targetAmount
+        {
+            get { return _targetAmount; }
+            set
+            {
+                _targetAmount = value;
+                OnPropertyChanged("targetAmount");
+            }
+        }
+
         private ICommand _navigateCommand;
         public ICommand navigateCommand
         {
