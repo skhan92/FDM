@@ -85,7 +85,7 @@ namespace FDMGift.EntityFramework
             _context.SaveChanges();
         }
 
-        public void removeUsers(Users UsersToUpdate, int IdToRemove) //Removing an exisiting user by ID
+        public void removeUsers(int IdToRemove) //Removing an exisiting user by ID
         {
             //Remove a user from the database
             foreach (Users users in _context.users)
