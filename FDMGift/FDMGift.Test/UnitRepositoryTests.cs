@@ -183,27 +183,83 @@ namespace FDMGift.Test
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Test_AddUser_CallsAddOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Users> user = new Mock<Users>();
+            //Arrange
+            
+            var mockDbSet = new Mock<DbSet<Users>>();
+            var mockContext = new Mock<EFramework>();
+
+            mockContext.Setup(p => p.users).Returns(mockDbSet.Object);
+
+            var classUnderTest = new UserRepository(mockContext.Object);
+
+            //Act
+            classUnderTest.addUsers(user.Object );
+
+            //Assert
+            mockDbSet.Verify(p => p.Add(user.Object), Times.Once);
+            mockContext.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_UpdateUser_CallsUpdateOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Users> user = new Mock<Users>();
+            //Arrange
+            var mockContext = new Mock<EFramework>();
+            string EmailToChange = "s@g.com";
+            string WhatToChange = "fullName";
+            string changeTo = "A";
+
+            var testData = new List<Users>
+            {
+                new Users { id = 1, fullName = "Suleman Khan", email = "s@g.com", password = "sk"},
+                new Users { id = 2, fullName = "Humzah Khan", email = "h@g.com", password = "hk"},
+                new Users { id = 3, fullName = "Ayesha Khan", email = "a@g.com", password = "ak"}
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Users>>();
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Users>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.users).Returns(dbSetMock.Object);
+
+            UserRepository classUnderTest = new UserRepository(contextMock.Object);
+
+            //Act
+            classUnderTest.updateUser(EmailToChange, WhatToChange, changeTo);
+            
+            //Assert
+            Assert.AreEqual(changeTo, dbSetMock.Object.First().fullName);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+
         //[TestMethod]
-        //public void Test_AddUser_CallsAddOnDbSetAndSaveChangesOnContext()
+        //public void Test_RemoveUser_CallsRemoveOnDbSetAndSaveChangesOnContext()
         //{
+        //    Mock<Users> user = new Mock<Users>();
         //    //Arrange
+
         //    var mockDbSet = new Mock<DbSet<Users>>();
-        //    var mockContext = new Mock<UsersContext>();
+        //    var mockContext = new Mock<EFramework>();
 
         //    mockContext.Setup(p => p.users).Returns(mockDbSet.Object);
 
         //    var classUnderTest = new UserRepository(mockContext.Object);
 
         //    //Act
-        //    classUnderTest.addUsers(new Users { fullName = "S K" });
+        //    classUnderTest.addUsers(user.Object);
 
         //    //Assert
-        //    mockDbSet.Verify(p => p.Add(It.IsAny<Broker>()), Times.Once);
+        //    mockDbSet.Verify(p => p.Add(user.Object), Times.Once);
         //    mockContext.Verify(p => p.SaveChanges(), Times.Once);
         //}
-
-
-        
-
     }
 }
