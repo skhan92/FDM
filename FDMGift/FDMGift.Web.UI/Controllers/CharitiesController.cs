@@ -13,7 +13,7 @@ namespace WebUI.Controllers
         // GET: Charities
         public ActionResult Index()
         {
-            return View(db.charities.ToList());
+            return View("Index", db.charities.ToList());
         }
 
         //[HttpGet]
