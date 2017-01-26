@@ -15,14 +15,20 @@ namespace FDMGift.Logic
     public class UserLogic : IUserLogic
     {
         EFramework _EF;
+        UserRepository ur;
+
         public UserLogic(EFramework EF)
         {
             _EF = EF;
         }
 
+        public UserLogic(UserRepository UserRepository)
+        {
+            ur = UserRepository;
+        }
+
         public bool RegisterUser(Users userToAdd)
         {
-            UserRepository ur = new UserRepository(_EF);
             if (ur.checkUserExists(userToAdd.email) == true)
             {
                 return true;

@@ -20,7 +20,7 @@ namespace FDMGift.EntityFramework
             return _context.charities.ToList();
         }
 
-        public bool checkCharityExists(string NameOfCharityToCheck)
+        public virtual bool checkCharityExists(string NameOfCharityToCheck)
         {
             var query = from b in _context.charities
                         where b.charityName == NameOfCharityToCheck
@@ -36,7 +36,7 @@ namespace FDMGift.EntityFramework
             return false;
         }
 
-        public void addCharities(Charities CharitiesToAdd) //Adding a charity to the database
+        public virtual void addCharities(Charities CharitiesToAdd) //Adding a charity to the database
         {
             //Adding a charity to the database
             _context.charities.Add(CharitiesToAdd);
