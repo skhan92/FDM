@@ -16,7 +16,7 @@
         <TabControl>
             <TabItem Header="List Users">
                 <StackPanel>
-                    <Button Content="Submit" Command="{Binding navigateCommand}" Style="{StaticResource MyStyle}"/>
+                    <Button Content="Submit" Style="{StaticResource MyStyle}"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Update Charity">
