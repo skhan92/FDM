@@ -20,6 +20,7 @@ namespace FDMGift.Logic
         public UserLogic(EFramework EF)
         {
             _EF = EF;
+            ur = new UserRepository(EF);
         }
 
         public UserLogic(UserRepository UserRepository)
