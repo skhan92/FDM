@@ -11,10 +11,10 @@ namespace FDMGift.EntityFramework
     {
         public virtual int id { get; set; }
         [DisplayName("Full Name")]
-        public string fullName { get; set; }
+        public virtual string fullName { get; set; }
         [DisplayName("E-Mail")]
-        public string email { get; set; }
+        public virtual string email { get; set; }
         [DisplayName("Password")]
-        public string password { get; set; }
+        public virtual string password { get; set; }
     }
 }

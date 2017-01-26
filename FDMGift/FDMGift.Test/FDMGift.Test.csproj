@@ -104,6 +104,10 @@
       <Project>{b63c031e-1aa0-489f-b153-0590bf2fa223}</Project>
       <Name>FDMGift.EntityFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FDMGift.Logic\FDMGift.Logic.csproj">
+      <Project>{da4564ba-8e6d-4006-9865-61dec655b6cb}</Project>
+      <Name>FDMGift.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

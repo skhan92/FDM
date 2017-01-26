@@ -11,8 +11,8 @@ namespace FDMGift.EntityFramework
     {
         public virtual int id { get; set; }
         [DisplayName("Name")]
-        public string charityName { get; set; }
+        public virtual string charityName { get; set; }
         [DisplayName("Target Amount")]
-        public int targetAmount { get; set; }
+        public virtual int targetAmount { get; set; }
     }
 }

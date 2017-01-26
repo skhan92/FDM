@@ -36,7 +36,7 @@ namespace FDMGift.EntityFramework
             return false;
         }
 
-        public bool checkUserExists(string EmailOfUserToCheck)
+        public virtual bool checkUserExists(string EmailOfUserToCheck)
         {
             var query = from b in _context.users
                         where b.email == EmailOfUserToCheck
@@ -52,7 +52,7 @@ namespace FDMGift.EntityFramework
             return false;
         }
 
-        public void addUsers(Users UsersToAdd) //Adding a user to the database
+        public virtual void addUsers(Users UsersToAdd) //Adding a user to the database
         {
             //Adding a user to the database
             _context.users.Add(UsersToAdd);
