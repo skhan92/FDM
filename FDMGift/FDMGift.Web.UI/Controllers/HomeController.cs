@@ -11,21 +11,21 @@ namespace WebUI.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Application description page.";
 
-            return View();
+            return View("About");
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Application contact page.";
 
-            return View();
+            return View("Contact");
         }
     }
 }
