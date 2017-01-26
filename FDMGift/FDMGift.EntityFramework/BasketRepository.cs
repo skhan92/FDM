@@ -47,7 +47,7 @@ namespace FDMGift.EntityFramework
             _context.SaveChanges();
         }
 
-        public void removeBasket(Basket BasketToUpdate, int IdToRemove) //Removing an exisiting Basket by ID
+        public void removeBasket(int IdToRemove) //Removing an exisiting Basket by ID
         {
             //Remove a basket from the database
             foreach (Basket basket in _context.basket)

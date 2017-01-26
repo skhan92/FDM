@@ -468,5 +468,134 @@ namespace FDMGift.Test
             dbSetMock.Verify(p => p.Remove(charityRemoved.Object), Times.Once);
             contextMock.Verify(p => p.SaveChanges(), Times.Once);
         }
+
+        //BASKET REPOSITORY
+        [TestMethod]
+        public void Test_GetAllBasket_ReturnsAllDonations()
+        {
+            //Arrange
+            var expected = new List<Basket>
+            {
+                new Basket { basketId = 1, userId = 1, charityId = 1, amountDonated = 10},
+                new Basket { basketId = 2, userId = 2, charityId = 2, amountDonated = 20},
+            };
+
+            var testData = new List<Basket>
+            {
+                new Basket { basketId = 1, userId = 1, charityId = 1, amountDonated = 10},
+                new Basket { basketId = 2, userId = 2, charityId = 2, amountDonated = 20},
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Basket>>();
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.basket).Returns(dbSetMock.Object);
+
+            BasketRepository classUnderTest = new BasketRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.GetBasket();
+
+            //Assert
+            Assert.AreEqual(expected[0].basketId, actual[0].basketId);
+            Assert.AreEqual(expected[1].basketId, actual[1].basketId);
+        }
+
+        [TestMethod]
+        public void Test_AddDonation_CallsAddOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Basket> basket = new Mock<Basket>();
+            //Arrange
+
+            var mockDbSet = new Mock<DbSet<Basket>>();
+            var mockContext = new Mock<EFramework>();
+
+            mockContext.Setup(p => p.basket).Returns(mockDbSet.Object);
+
+            var classUnderTest = new BasketRepository(mockContext.Object);
+
+            //Act
+            classUnderTest.addBasket(basket.Object);
+
+            //Assert
+            mockDbSet.Verify(p => p.Add(basket.Object), Times.Once);
+            mockContext.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_UpdateBasket_CallsUpdateOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Basket> basket = new Mock<Basket>();
+            //Arrange
+            var mockContext = new Mock<EFramework>();
+            int IdToChange = 1;
+            string WhatToChange = "amountDonated";
+            int changeTo = 50;
+
+            var testData = new List<Basket>
+            {
+                new Basket { basketId = 1, userId = 1, charityId = 1, amountDonated = 50  }
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Basket>>();
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.basket).Returns(dbSetMock.Object);
+
+            BasketRepository classUnderTest = new BasketRepository(contextMock.Object);
+
+            //Act
+            classUnderTest.updateBasket(IdToChange, WhatToChange, changeTo);
+
+            //Assert
+            Assert.AreEqual(changeTo, dbSetMock.Object.First().amountDonated);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_RemoveBasket_RemoveBasketFromDatabase()
+        {
+            Mock<Basket> basketRemoved = new Mock<Basket>();
+
+            //Arrange
+            List<Basket> basketList = new List<Basket>();
+            basketList = new List<Basket> { basketRemoved.Object };
+
+            basketRemoved.Setup(p => p.basketId).Returns(1);
+
+            var testData = new List<Basket>()
+            {
+                basketRemoved.Object
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Basket>>();
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Basket>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.basket).Returns(dbSetMock.Object);
+
+            BasketRepository classUnderTest = new BasketRepository(contextMock.Object);
+            dbSetMock.Setup(s => s.Remove(basketRemoved.Object)).Verifiable();
+
+            //Act
+            classUnderTest.removeBasket(basketRemoved.Object.basketId);
+
+            //Assert
+            dbSetMock.Verify(p => p.Remove(basketRemoved.Object), Times.Once);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+
     }
 }
