@@ -13,10 +13,27 @@
     </Page.DataContext>
 
     <Grid>
+        
         <TabControl>
             <TabItem Header="List Users">
                 <StackPanel>
                     <Button Content="Submit" Command="{Binding navigateCommand}" Style="{StaticResource MyStyle}"/>
+                    <ListBox HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" ItemsSource="{Binding userList}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding id}" Margin="10"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding fullName}" Margin="10"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding email}" Margin="10"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Update Charity">
