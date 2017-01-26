@@ -90,24 +90,39 @@ namespace FDMGift.WPF.ViewModels
         {
             get
             {
-            if (_navigateCommand == null)
-            {
-                _navigateCommand = new Command(Navigate);
-            }
-            return _navigateCommand;
+                if (_navigateCommand == null)
+                {
+                    _navigateCommand = new Command(GetUsers, CanGetUsers);
+                }
+                return _navigateCommand;
             }
             set { _navigateCommand = value; }
         }
 
-        private void Navigate()
+        //public AdminViewModel()
+        //{
+        //    userList = _userRepo.GetAllUsers();
+        //}
+
+        public void GetUsers()
         {
             userList = _userRepo.GetAllUsers();
-
-            //access the nav view model
-            NavigationViewModel navVM =
-                App.Current.MainWindow.DataContext as NavigationViewModel;
-            //change the location to pagetwo.xaml
-            navVM.location = "Views/PageTwo.xaml";
         }
+
+        public bool CanGetUsers()
+        {
+            return true;
+        }
+
+        //private void Navigate()
+        //{
+            
+
+        //    //access the nav view model
+        //    NavigationViewModel navVM =
+        //        App.Current.MainWindow.DataContext as NavigationViewModel;
+        //    //change the location to pagetwo.xaml
+        //    navVM.location = "Views/PageTwo.xaml";
+        //}
     }
 }
