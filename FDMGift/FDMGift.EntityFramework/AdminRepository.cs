@@ -15,6 +15,11 @@ namespace FDMGift.EntityFramework
             _context = context;
         }
 
+        public List<Admins> GetAllAdmins()
+        {
+            return _context.admins.ToList();
+        }
+
         public bool checkAdminDetails(string EmailOfAdminToCheck, string AdminPasswordToCheck)
         {
             var query = from b in _context.admins
@@ -31,10 +36,6 @@ namespace FDMGift.EntityFramework
             return false;
         }
 
-        public List<Admins> GetAllAdmins()
-        {
-            return _context.admins.ToList();
-        }
 
         public void updateAdmins(int IdToChange, string WhatToChange, string changeTo) //Updating the details of an existing Admin
         {

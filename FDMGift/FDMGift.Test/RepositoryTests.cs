@@ -596,6 +596,145 @@ namespace FDMGift.Test
             contextMock.Verify(p => p.SaveChanges(), Times.Once);
         }
 
+        //ADMIN REPOSITORY
+        [TestMethod]
+        public void Test_GetAllAdmins_ReturnsAllAdmins()
+        {
+            //Arrange
+            var expected = new List<Admins>
+            {
+                new Admins { id = 1, email = "s@g.com", fullName = "abc", password = "a" },
+                new Admins { id = 2, email = "s@h.com", fullName = "def", password = "b" },
+            };
+
+            var testData = new List<Admins>
+            {
+                new Admins { id = 1, email = "s@g.com", fullName = "abc", password = "a" },
+                new Admins { id = 2, email = "s@h.com", fullName = "def", password = "b" },
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Admins>>();
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.admins).Returns(dbSetMock.Object);
+
+            AdminRepository classUnderTest = new AdminRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.GetAllAdmins();
+
+            //Assert
+            Assert.AreEqual(expected[0].id, actual[0].id);
+            Assert.AreEqual(expected[1].id, actual[1].id);
+        }
+
+        [TestMethod]
+        public void Test_CheckAdminDetails_ConfirmEmailAndPasswordMatchEntry()
+        {
+            //Arrange
+            bool expected = true;
+
+            string email = "s@g.com";
+            string password = "sk";
+
+            var testData = new List<Admins>
+            {
+                new Admins { id = 1, fullName = "Suleman Khan", email = "s@g.com", password = "sk"},
+                new Admins { id = 2, fullName = "Humzah Khan", email = "h@g.com", password = "hk"},
+                new Admins { id = 3, fullName = "Ayesha Khan", email = "a@g.com", password = "ak"}
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Admins>>();
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.admins).Returns(dbSetMock.Object);
+
+            AdminRepository classUnderTest = new AdminRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.checkAdminDetails(email, password);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_CheckAdminDetails_ConfirmEmailAndPasswordDontMatchEntry()
+        {
+            //Arrange
+            bool expected = false;
+
+            string email = "s@g.com";
+            string password = "ak";
+
+            var testData = new List<Admins>
+            {
+                new Admins { id = 1, fullName = "Suleman Khan", email = "s@g.com", password = "sk"},
+                new Admins { id = 2, fullName = "Humzah Khan", email = "h@g.com", password = "hk"},
+                new Admins { id = 3, fullName = "Ayesha Khan", email = "a@g.com", password = "ak"}
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Admins>>();
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.admins).Returns(dbSetMock.Object);
+
+            AdminRepository classUnderTest = new AdminRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.checkAdminDetails(email, password);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_UpdateAdmin_CallsUpdateOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Admins> user = new Mock<Admins>();
+            //Arrange
+            var mockContext = new Mock<EFramework>();
+            int IdToChange = 1;
+            string WhatToChange = "fullName";
+            string changeTo = "A";
+
+            var testData = new List<Admins>
+            {
+                new Admins { id = 1, fullName = "Suleman Khan", email = "s@g.com", password = "sk"},
+                new Admins { id = 2, fullName = "Humzah Khan", email = "h@g.com", password = "hk"},
+                new Admins { id = 3, fullName = "Ayesha Khan", email = "a@g.com", password = "ak"}
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Admins>>();
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Admins>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.admins).Returns(dbSetMock.Object);
+
+            AdminRepository classUnderTest = new AdminRepository(contextMock.Object);
+
+            //Act
+            classUnderTest.updateAdmins(IdToChange, WhatToChange, changeTo);
+
+            //Assert
+            Assert.AreEqual(changeTo, dbSetMock.Object.First().fullName);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
 
     }
 }
