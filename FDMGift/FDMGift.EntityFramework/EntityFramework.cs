@@ -18,9 +18,9 @@ namespace FDMGift.EntityFramework
         }
 
         public virtual DbSet<Users> users { get; set; }
-        public DbSet<Admins> admins { get; set; }
-        public DbSet<Charities> charities { get; set; }
-        public DbSet<Basket> basket { get; set; }
+        public virtual DbSet<Admins> admins { get; set; }
+        public virtual DbSet<Charities> charities { get; set; }
+        public virtual DbSet<Basket> basket { get; set; }
 
     }
 }
