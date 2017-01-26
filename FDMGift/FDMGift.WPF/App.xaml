@@ -33,5 +33,10 @@
             <Setter Property="Background" Value="SteelBlue"/>
         </Style>
         
+        <Style x:Name="Table" TargetType="ListBox">
+            <Setter Property="Background" Value="Beige"/>
+            <Setter Property="Foreground" Value="Beige"/>
+        </Style>
+        
     </Application.Resources>
 </Application>
