@@ -38,7 +38,7 @@ namespace FDMGift.Test
         }
 
         [TestMethod]
-        public void Test_Contact_ReturnsAboutView()
+        public void Test_Contact_ReturnsContactView()
         {
             var expected = "Contact";
 
@@ -49,6 +49,17 @@ namespace FDMGift.Test
             Assert.AreEqual(expected, actual.ViewName);
         }
 
+        //CHARITIES CONTROLLER
+        [TestMethod]
+        public void Test_CIndex_ReturnsCIndexView()
+        {
+            var expected = "Index";
 
+            CharitiesController classUnderTest = new CharitiesController();
+
+            var actual = classUnderTest.Index() as ViewResult;
+
+            Assert.AreEqual(expected, actual.ViewName);
+        }
     }
 }
