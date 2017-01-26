@@ -276,5 +276,197 @@ namespace FDMGift.Test
             dbSetMock.Verify(p => p.Remove(userRemoved.Object), Times.Once);
             contextMock.Verify(p => p.SaveChanges(), Times.Once);
         }
+
+        //CHARITY REPOSITORY
+        [TestMethod]
+        public void Test_GetAllCharities_ReturnsAllCharities()
+        {
+            //Arrange
+            var expected = new List<Charities>
+            {
+                new Charities { id = 1, charityName = "Suleman Khan", targetAmount = 10},
+                new Charities { id = 2, charityName = "Humzah Khan", targetAmount = 20},
+                new Charities { id = 3, charityName = "Ayesha Khan", targetAmount = 30}
+            };
+
+            var testData = new List<Charities>
+            {
+                new Charities { id = 1, charityName = "Suleman Khan", targetAmount = 10},
+                new Charities { id = 2, charityName = "Humzah Khan", targetAmount = 20},
+                new Charities { id = 3, charityName = "Ayesha Khan", targetAmount = 30}
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Charities>>();
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.charities).Returns(dbSetMock.Object);
+
+            CharitiesRepository classUnderTest = new CharitiesRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.GetAllCharities();
+
+            //Assert
+            Assert.AreEqual(expected[0].id, actual[0].id);
+            Assert.AreEqual(expected[1].id, actual[1].id);
+            Assert.AreEqual(expected[2].id, actual[2].id);
+        }
+
+        [TestMethod]
+        public void Test_CheckCharityExists_ConfirmCharityNameMatchDatabase()
+        {
+            //Arrange
+            bool expected = true;
+
+            string charityName = "H";
+
+            var testData = new List<Charities>
+            {
+                new Charities { id = 1, charityName = "H", targetAmount = 10},
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Charities>>();
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.charities).Returns(dbSetMock.Object);
+
+            CharitiesRepository classUnderTest = new CharitiesRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.checkCharityExists(charityName);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_CheckCharityExists_ConfirmCharityNameDoesntMatchDatabase()
+        {
+            //Arrange
+            bool expected = false;
+
+            string charityName = "S";
+
+            var testData = new List<Charities>
+            {
+                new Charities { id = 1, charityName = "H", targetAmount = 10},
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Charities>>();
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.charities).Returns(dbSetMock.Object);
+
+            CharitiesRepository classUnderTest = new CharitiesRepository(contextMock.Object);
+
+            //Act
+            var actual = classUnderTest.checkCharityExists(charityName);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_AddCharity_CallsAddOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Charities> charities = new Mock<Charities>();
+            //Arrange
+
+            var mockDbSet = new Mock<DbSet<Charities>>();
+            var mockContext = new Mock<EFramework>();
+
+            mockContext.Setup(p => p.charities).Returns(mockDbSet.Object);
+
+            var classUnderTest = new CharitiesRepository(mockContext.Object);
+
+            //Act
+            classUnderTest.addCharities(charities.Object);
+
+            //Assert
+            mockDbSet.Verify(p => p.Add(charities.Object), Times.Once);
+            mockContext.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_UpdateCharity_CallsUpdateOnDbSetAndSaveChangesOnContext()
+        {
+            Mock<Charities> charities = new Mock<Charities>();
+            //Arrange
+            var mockContext = new Mock<EFramework>();
+            int IdToChange = 1;
+            string WhatToChange = "targetAmount";
+            int changeTo = 50;
+
+            var testData = new List<Charities>
+            {
+                new Charities { id = 1, charityName = "abc", targetAmount = 50 }
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Charities>>();
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.charities).Returns(dbSetMock.Object);
+
+            CharitiesRepository classUnderTest = new CharitiesRepository(contextMock.Object);
+
+            //Act
+            classUnderTest.updateCharities(IdToChange, WhatToChange, changeTo);
+
+            //Assert
+            Assert.AreEqual(changeTo, dbSetMock.Object.First().targetAmount);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
+
+        [TestMethod]
+        public void Test_RemoveCharity_RemoveCharityFromDatabase()
+        {
+            Mock<Charities> charityRemoved = new Mock<Charities>();
+
+            //Arrange
+            List<Charities> charityList = new List<Charities>();
+            charityList = new List<Charities> { charityRemoved.Object };
+
+            charityRemoved.Setup(p => p.id).Returns(1);
+
+            var testData = new List<Charities>()
+            {
+                charityRemoved.Object
+            }.AsQueryable();
+
+            var dbSetMock = new Mock<DbSet<Charities>>();
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Provider).Returns(testData.Provider);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.Expression).Returns(testData.Expression);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.ElementType).Returns(testData.ElementType);
+            dbSetMock.As<IQueryable<Charities>>().Setup(d => d.GetEnumerator()).Returns(testData.GetEnumerator());
+
+            Mock<EFramework> contextMock = new Mock<EFramework>();
+            contextMock.Setup(c => c.charities).Returns(dbSetMock.Object);
+
+            CharitiesRepository classUnderTest = new CharitiesRepository(contextMock.Object);
+            dbSetMock.Setup(s => s.Remove(charityRemoved.Object)).Verifiable();
+
+            //Act
+            classUnderTest.removeCharities(charityRemoved.Object.id);
+
+            //Assert
+            dbSetMock.Verify(p => p.Remove(charityRemoved.Object), Times.Once);
+            contextMock.Verify(p => p.SaveChanges(), Times.Once);
+        }
     }
 }

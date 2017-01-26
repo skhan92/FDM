@@ -9,7 +9,7 @@ namespace FDMGift.EntityFramework
 {
     public class Charities
     {
-        public int id { get; set; }
+        public virtual int id { get; set; }
         [DisplayName("Name")]
         public string charityName { get; set; }
         [DisplayName("Target Amount")]

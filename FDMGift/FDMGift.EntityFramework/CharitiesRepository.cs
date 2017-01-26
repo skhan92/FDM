@@ -63,7 +63,7 @@ namespace FDMGift.EntityFramework
             _context.SaveChanges();
         }
 
-        public void removeCharities(Charities CharitiesToUpdate, int IdToRemove) //Removing an exisiting charity by ID
+        public void removeCharities(int IdToRemove) //Removing an exisiting charity by ID
         {
             //Remove a charity from the database
             foreach (Charities charities in _context.charities)
