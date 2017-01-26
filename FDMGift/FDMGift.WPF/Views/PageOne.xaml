@@ -18,7 +18,7 @@
             <TabItem Header="List Users">
                 <StackPanel>
                     <Button Content="Submit" Command="{Binding navigateCommand}" Style="{StaticResource MyStyle}"/>
-                    <ListBox HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"  ItemsSource="{Binding userList}">
+                    <ListBox HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding userList}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
