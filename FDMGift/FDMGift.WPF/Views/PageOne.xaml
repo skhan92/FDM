@@ -9,7 +9,7 @@
 	Title="PageOne">
     
     <Page.DataContext>
-        <vm:CharityViewModel/>
+        <vm:AdminViewModel/>
     </Page.DataContext>
 
     <Grid>
