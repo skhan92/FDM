@@ -17,7 +17,7 @@ namespace WebUI.Controllers
         [HttpGet]
         public ActionResult Register()
         {
-            return View();
+            return View("Register");
         }
 
         [HttpPost]
@@ -37,7 +37,7 @@ namespace WebUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return View("Login");
         }
 
         [HttpPost]
@@ -79,7 +79,7 @@ namespace WebUI.Controllers
 
         public ActionResult UserDashboard()
         {
-            return View();
+            return View("UserDashboard");
         }
 
         public ActionResult LogOff()
@@ -92,7 +92,7 @@ namespace WebUI.Controllers
         [HttpGet]
         public ActionResult UpdateDetails()
         {
-            return View();
+            return View("UpdateDetails");
         }
 
         [HttpPost]
