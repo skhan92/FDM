@@ -9,6 +9,6 @@
 	Title="PageTwo">
 
     <Grid>
-        <TextBlock Text="Successful!!"/>
+        <TextBlock Text="Successful!!" Style="{StaticResource ResourceKey=textStyle}"/>
     </Grid>
 </Page>
