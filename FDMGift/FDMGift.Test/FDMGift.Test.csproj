@@ -113,6 +113,10 @@
       <Project>{da4564ba-8e6d-4006-9865-61dec655b6cb}</Project>
       <Name>FDMGift.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FDMGift.Web.UI\FDMGift.Web.UI.csproj">
+      <Project>{fda35af2-85d1-49bc-a2d3-a0b665508204}</Project>
+      <Name>FDMGift.Web.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
