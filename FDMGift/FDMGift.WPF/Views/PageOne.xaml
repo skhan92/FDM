@@ -16,7 +16,7 @@
         <TabControl>
             <TabItem Header="List Users">
                 <StackPanel>
-                    <Button Content="Submit" Style="{StaticResource MyStyle}"/>
+                    <Button Content="Submit" Command="{Binding navigateCommand}" Style="{StaticResource MyStyle}"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Update Charity">
@@ -25,7 +25,7 @@
                     <TextBox Text="{Binding IdToChange, Mode=TwoWay}"/>
                     <TextBlock Text="Please Enter the new Target Amount:" Style="{StaticResource textStyle}"/>
                     <TextBox Text="{Binding newTargetAmount, Mode=TwoWay}"/>
-                    <Button Content="Submit" Command="{Binding navigateCommand}" Style="{StaticResource MyStyle}"/>
+                    <Button Content="Submit" Style="{StaticResource MyStyle}"/>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Add Charity">
@@ -34,7 +34,7 @@
                     <TextBox Text="{Binding charityName, Mode=TwoWay}"/>
                     <TextBlock Text="Target amount:" Style="{StaticResource textStyle}"/>
                     <TextBox Text="{Binding targetAmount, Mode=Twoway}"/>
-                    <Button Content="Submit" Command="{Binding navigateCommand}" Style="{StaticResource MyStyle}"/>
+                    <Button Content="Submit" Style="{StaticResource MyStyle}"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
