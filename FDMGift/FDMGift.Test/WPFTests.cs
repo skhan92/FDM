@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace FDMGift.Test
 
 {
-    [TestClass]
-    public class WPFTests
-    {
-        [TestMethod]
-
-    }
+    //[TestClass]
+    //public class WPFTests
+    //{
+    //    [TestMethod]
+    //    public void Test_GetAllUsers
+    //}
 }
