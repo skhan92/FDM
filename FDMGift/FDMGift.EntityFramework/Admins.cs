@@ -8,7 +8,7 @@ namespace FDMGift.EntityFramework
 {
     public class Admins
     {
-        public int id { get; set; }
+        public virtual int id { get; set; }
         public string fullName { get; set; }
         public string email { get; set; }
         public string password { get; set; }
