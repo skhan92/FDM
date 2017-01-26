@@ -123,7 +123,5 @@ namespace FDMGift.Test
             Assert.AreEqual(expected, actual.ViewName);
         }
 
-
-
     }
 }
