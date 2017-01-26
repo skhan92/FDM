@@ -3,6 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
+        <Style x:Key="textStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        
+        <Style x:Key="MyStyle" TargetType="Button">
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse x:Name="circle" Fill="LightGreen" Stroke="DarkBlue" StrokeThickness="3"/>
+                            <TextBlock x:Name="text" Text="SUBMIT" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Name="Window"  TargetType="Grid">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+        
+        <Style x:Name="Tabs" TargetType="TabControl">
+            <Setter Property="Background" Value="SteelBlue"/>
+        </Style>
+        
     </Application.Resources>
 </Application>
