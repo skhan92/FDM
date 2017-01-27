@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 namespace FDMGift.WPF.ViewModels
 {
     public class AdminViewModel : BaseViewModel
