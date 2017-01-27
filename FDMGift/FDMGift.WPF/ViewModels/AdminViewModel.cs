@@ -1,5 +1,6 @@
 ﻿using FDMGift.EntityFramework;
 using FDMGift.Logic;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace FDMGift.WPF.ViewModels
 {
     public class AdminViewModel : BaseViewModel
     {
+        private static readonly ILog logger = LogManager.GetLogger("AdminViewModel.cs");
+
         UserRepository _userRepo;
         EFramework _EF;
 
@@ -106,6 +109,7 @@ namespace FDMGift.WPF.ViewModels
 
         public void GetUsers()
         {
+            logger.Info("User List has been returned");
             userList = _userRepo.GetAllUsers();
         }
 
