@@ -18,7 +18,7 @@ namespace WebUI.Controllers
         // GET: Charities
         public ActionResult Index()
         {
-            logger.Info("List has been returned");
+            logger.Info("Charities List has been returned");
             return View("Index", db.charities.ToList());
         }
 
