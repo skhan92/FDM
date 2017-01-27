@@ -1,5 +1,6 @@
 ﻿using FDMGift.EntityFramework;
 using FDMGift.Logic;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace WebUI.Controllers
     //NEED TO MAKE ADMIN AND USER LOGIN WORK TOGETHER!
     public class AccountController : Controller
     {
+        private static readonly ILog logger = LogManager.GetLogger("AccountController.cs");
+
         EFramework db = new EFramework();
 
         [HttpGet]
@@ -23,6 +26,7 @@ namespace WebUI.Controllers
         [HttpPost]
         public ActionResult Register(Users userToAdd)
         {
+            logger.Info("User Registered");
             UserLogic ulogic = new UserLogic(db);
             if (ulogic.RegisterUser(userToAdd) == true)
             {
@@ -43,6 +47,7 @@ namespace WebUI.Controllers
         [HttpPost]
         public ActionResult Login(Users checkUser, string returnUrl)
         {
+            logger.Info("User Logged In");
             UserRepository ur = new UserRepository(db);
             if (ModelState.IsValid)
             {
