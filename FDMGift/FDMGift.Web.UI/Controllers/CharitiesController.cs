@@ -18,7 +18,7 @@ namespace WebUI.Controllers
         // GET: Charities
         public ActionResult Index()
         {
-            logger.Info("List has not been returned - no database connection");
+            logger.Info("List has been returned");
             return View("Index", db.charities.ToList());
         }
 
