@@ -1,17 +1,17 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace FDMGift.Test
+//namespace FDMGift.Test
 
-{
-    //[TestClass]
-    //public class WPFTests
-    //{
-    //    [TestMethod]
-    //    public void Test_GetAllUsers
-    //}
-}
+//{
+//    [TestClass]
+//    public class WPFTests
+//    {
+//        [TestMethod]
+//        public void Test_GetAllUsers_
+//    }
+//}
