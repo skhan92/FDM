@@ -1,0 +1,14 @@
+15:27:34,694 [12] INFO TicketsController.cs - Tickets List has been returned
+15:32:47,475 [9] INFO TicketsController.cs - Tickets List has been returned
+15:35:26,439 [10] INFO TicketsController.cs - Tickets List has been returned
+15:49:57,930 [9] INFO TicketsController.cs - Tickets List has been returned
+15:50:02,214 [10] INFO TicketsController.cs - Tickets List has been returned
+15:50:24,189 [8] INFO TicketsController.cs - Tickets List has been returned
+16:18:51,367 [5] INFO TicketsController.cs - Tickets List has been returned
+17:12:32,308 [9] INFO TicketsController.cs - Tickets List has been returned
+17:13:46,190 [10] INFO TicketsController.cs - Tickets List has been returned
+17:14:36,480 [8] INFO TicketsController.cs - Tickets List has been returned
+17:15:24,866 [10] INFO TicketsController.cs - Tickets List has been returned
+17:19:03,512 [10] INFO TicketsController.cs - Tickets List has been returned
+17:22:59,508 [9] INFO TicketsController.cs - Tickets List has been returned
+17:24:46,370 [8] INFO TicketsController.cs - Tickets List has been returned
