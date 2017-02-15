@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="bc5ed5ae-fe0d-4e01-836e-b901b1fb7065" name="Suleman.Khan@TRNLON11508 2017-02-15 15:50:43" runUser="FDMGROUP\Suleman.Khan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="d896110f-fab3-4b43-84f6-69dcc2a6298e">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Suleman.Khan_TRNLON11508 2017-02-15 15_50_43" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2017-02-15T15:50:43.2734099+00:00" queuing="2017-02-15T15:50:45.4262099+00:00" start="2017-02-15T15:50:45.6446099+00:00" finish="2017-02-15T15:50:52.0562099+00:00" />
+  <ResultSummary outcome="Warning">
+    <Counters total="3" executed="3" passed="3" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="TRNLON11508" outcome="Warning" timestamp="2017-02-15T15:50:44.4746099+00:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'Microsoft.Owin.Security.OAuth' directly or indirectly referenced by the test container 'C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\onedso.tests\bin\debug\onedso.tests.dll' was not found.</Text>
+      </RunInfo>
+      <RunInfo computerName="TRNLON11508" outcome="Warning" timestamp="2017-02-15T15:50:44.4746099+00:00">
+        <Text>Warning: Test Run deployment issue: The assembly or module 'WebGrease' directly or indirectly referenced by the test container 'C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\onedso.tests\bin\debug\onedso.tests.dll' was not found.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Test_GetAllProducts_ReturnsAllProducts" storage="onedso.tests\bin\debug\onedso.tests.dll" id="99268877-94a6-9615-a6b7-067ccfbcee3c">
+      <Execution id="bbe1dbaf-3e4b-4297-a434-6433fc9dcdd4" />
+      <TestMethod codeBase="C:/Users/Suleman.khan/Desktop/PROJECT/ONEDSO/ONEDSO.Tests/bin/debug/ONEDSO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ONEDSO.Tests.RepositoryTests, ONEDSO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_GetAllProducts_ReturnsAllProducts" />
+    </UnitTest>
+    <UnitTest name="Test_Index_ReturnsIndexView" storage="onedso.tests\bin\debug\onedso.tests.dll" id="61217c2d-e07f-12b8-9fa2-32e170392762">
+      <Execution id="8d598fa2-199e-4a0c-a8c6-0dc7991fa3e8" />
+      <TestMethod codeBase="C:/Users/Suleman.khan/Desktop/PROJECT/ONEDSO/ONEDSO.Tests/bin/debug/ONEDSO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ONEDSO.Tests.WebUITests, ONEDSO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_Index_ReturnsIndexView" />
+    </UnitTest>
+    <UnitTest name="Test_HomeIndex_ReturnsHomeIndexView" storage="onedso.tests\bin\debug\onedso.tests.dll" id="58801d83-018e-e382-174d-4410cc8fd820">
+      <Execution id="d2c6ce17-283f-493e-9a08-471e4fa2d187" />
+      <TestMethod codeBase="C:/Users/Suleman.khan/Desktop/PROJECT/ONEDSO/ONEDSO.Tests/bin/debug/ONEDSO.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="ONEDSO.Tests.WebUITests, ONEDSO.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test_HomeIndex_ReturnsHomeIndexView" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="99268877-94a6-9615-a6b7-067ccfbcee3c" executionId="bbe1dbaf-3e4b-4297-a434-6433fc9dcdd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58801d83-018e-e382-174d-4410cc8fd820" executionId="d2c6ce17-283f-493e-9a08-471e4fa2d187" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61217c2d-e07f-12b8-9fa2-32e170392762" executionId="8d598fa2-199e-4a0c-a8c6-0dc7991fa3e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="bbe1dbaf-3e4b-4297-a434-6433fc9dcdd4" testId="99268877-94a6-9615-a6b7-067ccfbcee3c" testName="Test_GetAllProducts_ReturnsAllProducts" computerName="TRNLON11508" duration="00:00:01.2051760" startTime="2017-02-15T15:50:45.7382099+00:00" endTime="2017-02-15T15:50:47.4074099+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbe1dbaf-3e4b-4297-a434-6433fc9dcdd4">
+    </UnitTestResult>
+    <UnitTestResult executionId="d2c6ce17-283f-493e-9a08-471e4fa2d187" testId="58801d83-018e-e382-174d-4410cc8fd820" testName="Test_HomeIndex_ReturnsHomeIndexView" computerName="TRNLON11508" duration="00:00:00.0639843" startTime="2017-02-15T15:50:47.4074099+00:00" endTime="2017-02-15T15:50:47.4698099+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2c6ce17-283f-493e-9a08-471e4fa2d187">
+    </UnitTestResult>
+    <UnitTestResult executionId="8d598fa2-199e-4a0c-a8c6-0dc7991fa3e8" testId="61217c2d-e07f-12b8-9fa2-32e170392762" testName="Test_Index_ReturnsIndexView" computerName="TRNLON11508" duration="00:00:02.8558649" startTime="2017-02-15T15:50:47.4698099+00:00" endTime="2017-02-15T15:50:50.3246099+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d598fa2-199e-4a0c-a8c6-0dc7991fa3e8">
+    </UnitTestResult>
+  </Results>
+</TestRun>

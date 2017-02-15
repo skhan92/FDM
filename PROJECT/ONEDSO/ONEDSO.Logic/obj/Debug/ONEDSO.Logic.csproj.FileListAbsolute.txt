@@ -1,0 +1,26 @@
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.Logic.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.Logic.pdb
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\obj\Debug\ONEDSO.Logic.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\obj\Debug\ONEDSO.Logic.pdb
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.Logic.dll.config
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\log4net.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.xml
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\log4net.xml
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.Logic\obj\Debug\ONEDSO.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\obj\Debug\ONEDSO.Logic.csprojResolveAssemblyReference.cache
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\obj\Debug\ONEDSO.Logic.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\obj\Debug\ONEDSO.Logic.pdb
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.Logic.dll.config
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.Logic.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.Logic.pdb
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\log4net.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\ONEDSO.EntityFramework.pdb
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.xml
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.Logic\bin\Debug\log4net.xml

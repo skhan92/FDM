@@ -1,0 +1,24 @@
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\ONEDSO.EntityFramework.dll.config
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\ONEDSO.EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\ONEDSO.EntityFramework.pdb
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.xml
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\obj\Debug\ONEDSO.EntityFramework.csprojResolveAssemblyReference.cache
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\obj\Debug\ONEDSO.EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\obj\Debug\ONEDSO.EntityFramework.pdb
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\log4net.dll
+C:\Users\Suleman.khan\Desktop\ONE DAY SIGN OFF PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\log4net.xml
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\ONEDSO.EntityFramework.dll.config
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\ONEDSO.EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\ONEDSO.EntityFramework.pdb
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\log4net.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.xml
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\bin\Debug\log4net.xml
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\obj\Debug\ONEDSO.EntityFramework.csprojResolveAssemblyReference.cache
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\obj\Debug\ONEDSO.EntityFramework.dll
+C:\Users\Suleman.khan\Desktop\PROJECT\ONEDSO\ONEDSO.EntityFramework\obj\Debug\ONEDSO.EntityFramework.pdb
