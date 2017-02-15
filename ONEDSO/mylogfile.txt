@@ -1,5 +1,0 @@
-14:27:32,966 [10] INFO TicketsController.cs - Tickets List has been returned
-14:27:40,124 [10] INFO TicketsController.cs - Tickets List has been returned
-14:27:41,717 [8] INFO TicketsController.cs - Tickets List has been returned
-14:27:42,833 [9] INFO TicketsController.cs - Tickets List has been returned
-14:27:43,753 [8] INFO TicketsController.cs - Tickets List has been returned
