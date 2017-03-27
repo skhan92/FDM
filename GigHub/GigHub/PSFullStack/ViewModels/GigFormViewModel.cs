@@ -20,7 +20,9 @@ namespace PSFullStack.ViewModels
 
         [Required]
         public byte Genre { get; set; }
+
         public IEnumerable<Genre> Genres { get; set; }
+
         public DateTime DateTime
         {
             get
