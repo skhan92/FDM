@@ -13,9 +13,11 @@ namespace PSFullStack.ViewModels
         public string Venue { get; set; }
 
         [Required]
+        [FutureDate]
         public string Date { get; set; }
 
         [Required]
+        [ValidTime]
         public string Time { get; set; }
 
         [Required]
@@ -23,12 +25,9 @@ namespace PSFullStack.ViewModels
 
         public IEnumerable<Genre> Genres { get; set; }
 
-        public DateTime DateTime
+        public DateTime GetDateTime()
         {
-            get
-            {
-                return DateTime.Parse(string.Format("{0} {1}", Date, Time));
-            }
+            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
     }
 }
